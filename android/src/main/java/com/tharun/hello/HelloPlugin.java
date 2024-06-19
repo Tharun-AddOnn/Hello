@@ -6,17 +6,17 @@ import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.CapacitorPlugin;
 
-@CapacitorPlugin(name = "Hello")
+@CapacitorPlugin(name = "Hello") 
 public class HelloPlugin extends Plugin {
 
     private Hello implementation = new Hello();
 
     @PluginMethod
     public void echo(PluginCall call) {
-        String value = call.getString("value");
+        //String value = call.getString("value");
 
         JSObject ret = new JSObject();
-        ret.put("value", implementation.echo(value));
+        ret.put("value", implementation.echo());
         call.resolve(ret);
     }
 }
